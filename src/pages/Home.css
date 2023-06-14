@@ -1,0 +1,21 @@
+.home img{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+.home h1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: brown;
+}
+.hi{
+    display: flex;
+}
+@media screen and (max-width: 768px){
+    .hi{
+        flex-direction: column;
+    }
+}

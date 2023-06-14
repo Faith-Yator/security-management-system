@@ -1,0 +1,151 @@
+.navbar {
+    background-color:darkblue;
+    color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+   
+  }
+  
+  .navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #fff;
+  }
+  
+  .navbar-logo img {
+      width: 70px;
+      height: 70px;
+      cursor: pointer;
+      border-radius: 50%;
+  }
+
+  
+  .menu-icon {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  
+  .menu-icon span {
+    width: 25px;
+    height: 3px;
+    background-color:darkblue;
+    margin: 3px 0;
+    display: hidden;
+    
+  }
+  
+  .nav-menu {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-item {
+    position: relative;
+    margin-right: 1rem;
+    font-size: 13PX;
+    text-decoration: none;
+    color: #fff;
+    
+  }
+  
+  
+  .nav-link {
+    color:white;
+    text-decoration: none;
+    padding: 0.5rem;
+    transition: color 0.3s ease;
+    font-size: 20px;
+  }
+  .nav-link:hover{
+    text-decoration: underline;
+    color: brown;
+  }
+  
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color:white;
+    padding: 0.5rem 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    list-style: none;
+    text-decoration: none;
+  }
+  
+  .dropdown-menu li {
+    padding: 0.5rem;
+  }
+  
+  .nav-item:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+  }
+  .nav-item li{
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+  }
+ 
+  
+  @media screen and (max-width: 768px) {
+    .nav-menu {
+      position: fixed;
+      top: 0;
+      right: 0;
+      height: 100vh;
+      width: -50%;
+      background-color:palevioletred;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 4rem;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+    .navbar{
+      width: 100%;
+    }
+  
+    .nav-menu.open {
+      opacity: 1;
+      visibility: visible;
+    }
+  
+    .nav-item {
+      margin-right: 0;
+      margin-bottom: 1rem;
+    }
+  
+    .nav-link {
+      padding: 1rem;
+      text-align: center;
+    }
+  
+    .dropdown-menu {
+      position: static;
+      background-color: transparent;
+      padding: 0;
+    }
+  
+    .dropdown-menu li {
+      padding: 0;
+    }
+  
+    .menu-icon {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      visibility: visible;
+    }
+  }
+  

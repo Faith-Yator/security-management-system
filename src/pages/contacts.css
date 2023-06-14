@@ -1,0 +1,20 @@
+
+
+.contacts{
+    justify-content: center;
+    align-items: center;
+
+}
+.contacts h1{
+    color: brown;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+
+}
+.contacts h3{
+    color: brown;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}

@@ -1,0 +1,37 @@
+.signup-button {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  .signup-form {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
+  
+  .signup-form input,
+  .signup-form button {
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .signup-form button {
+    background-color: #3498db;
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  .signup-form input:focus,
+  .signup-form button:focus {
+    border-color: #3498db;
+  }
+  

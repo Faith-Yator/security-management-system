@@ -1,0 +1,18 @@
+.about img{
+    width: 800px;
+    height: 20%;
+}
+.about{
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+    padding: 20px;
+}
+.about h1{
+    color: brown;
+    justify-content: flex-start;
+}
+/* .about h5{
+    color:black;
+} */

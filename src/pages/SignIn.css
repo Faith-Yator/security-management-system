@@ -1,0 +1,39 @@
+.signin-button {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    display: none;
+  }
+  
+  .signin-form {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
+  
+  .signin-form input,
+  .signin-form button {
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .signin-form button {
+    background-color: #3498db;
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+   
+  }
+  
+  .signin-form input:focus,
+  .signin-form button:focus {
+    border-color: #3498db;
+  }
+  
