@@ -27,8 +27,8 @@ const HomeSecurity = () => {
         <textarea
           value={newComment}
           onChange={(e) => setNewComment(e.target.value)}
-          placeholder="Add a comment..."
-          className="comment-input"
+          placeholder="Add a comment..." 
+          className="comment-input" 
         />
         <button onClick={handleAddComment} className="add-button">
           Add Comment

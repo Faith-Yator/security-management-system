@@ -1,13 +1,17 @@
 import React from 'react'
+import Main from './main'
 import HomeSecurity from './HomeSecurity'
-import Columns from './Columns'
+
+
 
 function OurSolutions() {
   return (
-    <div>
-      
-     <Columns/>
-    </div>
+    <div className='solutions'>
+    
+   
+      <Main/>  
+      <HomeSecurity/>
+      </div>
   )
 }
 

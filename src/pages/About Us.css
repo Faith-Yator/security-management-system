@@ -12,7 +12,25 @@
 .about h1{
     color: brown;
     justify-content: flex-start;
+    font-size: 2rem;
+    
 }
-/* .about h5{
-    color:black;
-} */
+.cardabout {
+    display: inline-block;
+    width: 400px;
+    padding: 20px;
+    height: 380px;
+    margin: 10px;
+    background-color: #f1f1f1;
+    box-shadow: 0 2px 4px blue;
+    transition: box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+  }
+  .cardabout:hover{
+    box-shadow: 0 4px 8px darkblue;
+  }
+  @media screen and (max-width: 768px){
+    .about{
+      flex-direction: column;
+    }
+  }

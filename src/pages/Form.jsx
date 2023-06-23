@@ -1,16 +1,38 @@
 import React, { useState } from 'react';
-import './Form.css'; // Import the CSS file for styling
+import './Form.css';
+import axios from 'axios';
 
 const Form = () => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
+  const [Newslaterid, setNewslaterid] = useState('');
+  const [Name, setName] = useState('');
+  const [Email, setEmail] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log(`Name: ${name}`);
-    console.log(`Email: ${email}`);
+
+
+    const data = {
+      Newslaterid: Newslaterid,
+      Name: Name,
+      Email: Email
+    };
+
+    console.log('Newslaterid:', Newslaterid);
+    console.log('Name:', Name);
+    console.log('Email:', Email);
+
+    axios.post('http://localhost:3000/Newslaters/new', data)
+      .then((response) => {
+        // Handle successful response
+        console.log(response.data);
+      })
+      .catch((error) => {
+        // Handle error
+        console.error(error);
+      });
+
     // Clear form inputs
+    setNewslaterid('');
     setName('');
     setEmail('');
   };
@@ -18,20 +40,29 @@ const Form = () => {
   return (
     <div className="form-container">
       <form onSubmit={handleSubmit} className="form">
-        <label htmlFor="name">Name:</label>
+        <label htmlFor="Newslaterid">Newslaterid:</label>
         <input
           type="text"
-          id="name"
-          value={name}
+          id="Newslaterid"
+          value={Newslaterid}
+          onChange={(e) => setNewslaterid(e.target.value)}
+          required
+        />
+
+        <label htmlFor="Name">Name:</label>
+        <input
+          type="text"
+          id="Name"
+          value={Name}
           onChange={(e) => setName(e.target.value)}
           required
         />
 
-        <label htmlFor="email">Email:</label>
+        <label htmlFor="Email">Email:</label>
         <input
-          type="email"
-          id="email"
-          value={email}
+          type="Email"
+          id="Email"
+          value={Email}
           onChange={(e) => setEmail(e.target.value)}
           required
         />

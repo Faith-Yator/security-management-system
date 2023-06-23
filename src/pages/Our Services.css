@@ -1,102 +1,84 @@
-/* .service{
-    align-items: center;
-    justify-content: center;
-    
-} */
-.our{
+.our {
     display: flex;
     justify-content: space-evenly;
-}
-.our img{
+  }
+  
+  .our img {
     width: 50%;
     align-items: center;
     justify-content: center;
     border-radius: 10px;
-
-
-}
-.service h1{
+  }
+  
+  .service h1 {
     color: brown;
     display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: underline;
-}
-.security{
+  }
+  
+  .security {
     padding: 50px;
-}
-.site h1{
+  }
+  
+  .site h1 {
     color: brown;
     text-decoration: underline;
-}
-
-
-.first{
+  }
+  
+  .first {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
     margin-top: 3rem;
-}
-
-.first-reverse{
+  }
+  
+  .first-reverse {
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
     margin-top: 4.5rem;
-}
-
-.first h1{
+  }
+  
+  .first h1 {
     padding: 1rem;
     color: brown;
     text-decoration: underline;
-}
-
-.first-reverse h1{
+  }
+  
+  .first-reverse h1 {
     padding: 1rem;
     color: brown;
     text-decoration: underline;
-}
-.aid{
+  }
+  
+  .aid {
     position: relative;
     display: flex;
     width: 50%;
     justify-content: space-between;
-    
-}
-.aid img{
-    width: 60%;
-    height: 450px;
+  }
+  
+  .aid img {
+    width: 100%;
+    height: auto;
     object-fit: cover;
     border-radius: 6px;
-    box-shadow: -1px 1px 62px 18px rgba(0, 0,0, 0.12);
+    box-shadow: -1px 1px 62px 18px rgba(0, 0, 0, 0.12);
     position: relative;
-}
-
-@media screen and (max-width:850px){
-    .location{
-        margin: 4rem 6rem;
+  }
+  
+  /* Media query for screens with a maximum width of 768px */
+  @media screen and (max-width: 768px) {
+    .first,
+    .first-reverse {
+      flex-direction: column;
     }
-    .first{
-        display: flex;
-        flex-direction: column;
-        margin-top: 2.5rem;
-        width: 100%;
+  
+    .aid {
+      width: 100%;
     }
-    .first-reverse{
-        display: flex;
-        flex-direction: column;
-        margin-top: 2.5rem;
-    }
-   
-    .aid{
-        width: 100%;
-        margin: 1.8rem 0;
-    }
-    .aid img{
-        height: 250px;
-    }
-    .our{
-        flex-direction: column;
-    }
-}
+  }
+  

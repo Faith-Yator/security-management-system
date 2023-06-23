@@ -1,8 +1,11 @@
 .navbar {
     background-color:darkblue;
     color: #fff;
-    padding: 2rem;
+    padding: 10px 10px;
     border-radius: 10px;
+    width: 97%;
+    margin: 10px 15px;
+    
    
   }
   
@@ -24,18 +27,13 @@
 
   
   .menu-icon {
-    display: flex;
-    flex-direction: column;
     cursor: pointer;
-  }
-  
-  .menu-icon span {
-    width: 25px;
-    height: 3px;
-    background-color:darkblue;
     margin: 3px 0;
-    display: hidden;
-    
+    visibility: hidden;
+   
+  }
+  .close-icon{
+    visibility: hidden;
   }
   
   .nav-menu {
@@ -45,6 +43,7 @@
     list-style: none;
     margin: 0;
     padding: 0;
+    
   }
   
   .nav-item {
@@ -69,23 +68,6 @@
     color: brown;
   }
   
-  .dropdown-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color:white;
-    padding: 0.5rem 0;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-    list-style: none;
-    text-decoration: none;
-  }
-  
-  .dropdown-menu li {
-    padding: 0.5rem;
-  }
-  
   .nav-item:hover .dropdown-menu {
     opacity: 1;
     visibility: visible;
@@ -102,18 +84,18 @@
       position: fixed;
       top: 0;
       right: 0;
-      height: 100vh;
       width: -50%;
-      background-color:palevioletred;
+      background-color:darkblue;
       flex-direction: column;
       align-items: center;
-      padding-top: 4rem;
+      padding-top: 10px;
       opacity: 0;
       visibility: hidden;
       transition: opacity 0.3s ease, visibility 0.3s ease;
     }
     .navbar{
       width: 100%;
+      margin-top: 0;
     }
   
     .nav-menu.open {
@@ -122,29 +104,25 @@
     }
   
     .nav-item {
-      margin-right: 0;
+      margin-left: 0;
       margin-bottom: 1rem;
+      text-align: center;
+      
     }
   
     .nav-link {
       padding: 1rem;
-      text-align: center;
+      text-align:top;
     }
   
-    .dropdown-menu {
-      position: static;
-      background-color: transparent;
-      padding: 0;
-    }
-  
-    .dropdown-menu li {
-      padding: 0;
-    }
   
     .menu-icon {
       position: absolute;
       top: 1rem;
       right: 1rem;
+      visibility: visible;
+    }
+    .close-icon{
       visibility: visible;
     }
   }

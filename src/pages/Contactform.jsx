@@ -1,65 +1,99 @@
+import React from 'react';
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from 'yup';
+import './ContactForm.css';
+import Axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
-
-import React, { useState } from 'react';
-import './Contactform.css';
+const schema = yup.object().shape({
+  FirstName: yup.string().required(),
+  LastName: yup.string().required(),
+  PhoneNumber: yup.string().required(),
+  Email: yup.string().email().required(),
+  Location: yup.string().required(),
+  Contactusid: yup.string().required(),
+});
 
 const ContactForm = () => {
-  const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    phoneNumber: '',
-    email: '',
-    location: ''
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset, // Add the reset method from react-hook-form
+  } = useForm({
+    resolver: yupResolver(schema),
   });
+  const navigate = useNavigate();
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const onSubmit = (data) => {
     // Handle form submission logic here
-    console.log(formData);
+    console.log(data);
+
+    Axios.post('http://localhost:3000/Contactuss/new', data)
+      .then((response) => {
+        // Handle successful response
+        console.log(response.data);
+        reset(); // Reset the form fields after successful submission
+        navigate('/Logout');
+      })
+      .catch((error) => {
+        // Handle error
+        console.error(error);
+      });
   };
 
   return (
     <div className="contact-form-container">
-      <form onSubmit={handleSubmit} className="contact-form">
+      <form onSubmit={handleSubmit(onSubmit)} className="contact-form">
         <input
           type="text"
           name="firstName"
-          placeholder="First Name"
-          value={formData.firstName}
-          onChange={handleChange}
+          placeholder="FirstName"
+          {...register('FirstName')}
         />
+        {errors.FirstName && <p>{errors.FirstName.message}</p>}
+
         <input
           type="text"
           name="lastName"
-          placeholder="Last Name"
-          value={formData.lastName}
-          onChange={handleChange}
+          placeholder="LastName"
+          {...register('LastName')}
         />
+        {errors.LastName && <p>{errors.LastName.message}</p>}
+
         <input
           type="text"
           name="phoneNumber"
-          placeholder="Phone Number"
-          value={formData.phoneNumber}
-          onChange={handleChange}
+          placeholder="PhoneNumber"
+          {...register('PhoneNumber')}
         />
+        {errors.PhoneNumber && <p>{errors.PhoneNumber.message}</p>}
+
         <input
-          type="email"
+          type="text"
           name="email"
           placeholder="Email"
-          value={formData.email}
-          onChange={handleChange}
+          {...register('Email')}
         />
+        {errors.Email && <p>{errors.Email.message}</p>}
+
         <input
           type="text"
           name="location"
           placeholder="Location"
-          value={formData.location}
-          onChange={handleChange}
+          {...register('Location')}
         />
+        {errors.Location && <p>{errors.Location.message}</p>}
+
+        <input
+          type="text"
+          name="Contactusid"
+          placeholder="Contactusid"
+          {...register('Contactusid')}
+        />
+        {errors.Contactusid && <p>{errors.Contactusid.message}</p>}
+
         <button type="submit">Contact</button>
       </form>
     </div>
