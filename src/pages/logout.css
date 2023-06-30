@@ -4,13 +4,16 @@
   align-items: center;
   height: 75vh;
   flex-direction: column;
+  /* background-image: url('./home.jpg'); */
+  background-size: cover;
+  /* height: 100vh; */
+  width: 100%;
+  border-radius: 12px;
 }
 .btn{
     padding: 20px;
     border-radius: 5px;
     background-color: #3498db;
 }
-.log{
-    color: brown;
-}
+
 

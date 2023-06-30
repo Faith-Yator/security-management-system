@@ -1,26 +1,38 @@
-.about img{
-    width: 800px;
-    height: 20%;
+
+.safety{
+  display: flex;
+ /* background-image: url('./home.jpg'); */
+  background-size: cover;
+  /* height: 75vh;  */
+  width: 100%;
+  position: relative;
+  border-radius: 10px;
+ 
+
 }
 .about{
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    display: flex;
     padding: 20px;
+   
+}
+.cardabout h1{
+  color: brown;
 }
 .about h1{
     color: brown;
-    justify-content: flex-start;
+    justify-content: center;
+    display: flex;
     font-size: 2rem;
     
 }
 .cardabout {
-    display: inline-block;
+    /* display: flex; */
     width: 400px;
     padding: 20px;
     height: 380px;
     margin: 10px;
+    margin-top: 2rem;
     background-color: #f1f1f1;
     box-shadow: 0 2px 4px blue;
     transition: box-shadow 0.3s ease-in-out;
@@ -29,8 +41,80 @@
   .cardabout:hover{
     box-shadow: 0 4px 8px darkblue;
   }
+  .cardabout1 {
+    /* display: flex; */
+    width:350px;
+    padding: 20px;
+    height: 200px;
+    margin: 10px;
+    margin-top: 20px;
+    background-color: #f1f1f1;
+    box-shadow: 0 2px 4px blue;
+    transition: box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+  }
+  .cardabout1 img {
+    width: 300px;
+    height: 150px;
+  }
+  .cardabout1:hover{
+    box-shadow: 0 4px 8px darkblue;
+  }
+  .cardabout2{
+    /* display: flex; */
+    width: 350px;
+    padding: 20px;
+    height: 200px;
+    margin: 10px;
+    margin-top: 20px;
+    background-color: #f1f1f1;
+    box-shadow: 0 2px 4px blue;
+    transition: box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+    margin-top: 2rem;
+  }
+  .cardabout2 img {
+    width: 300px;
+    height: 150px;
+  }
+  .cardabout2:hover{
+    box-shadow: 0 4px 8px darkblue;
+  }
+  .cardabout3 {
+    /* display: flex; */
+    width: 350px;
+    padding: 20px;
+    height: 200px;
+    margin: 10px;
+    margin-top: 20px;
+    background-color: #f1f1f1;
+    box-shadow: 0 2px 4px blue;
+    transition: box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+    margin-top: 3rem;
+  }
+  .cardabout3 img {
+    width: 300px;
+    height: 150px;
+  }
+  
+  .cardabout3:hover{
+    box-shadow: 0 4px 8px darkblue;
+  }
+
+  .Ab{
+    display: flex;
+    justify-content: space-evenly;
+  }
   @media screen and (max-width: 768px){
     .about{
       flex-direction: column;
+    }
+    .Ab{
+      flex-direction: column;
+    }
+    .safety{
+      flex-direction: column;
+      margin-bottom: 20px;
     }
   }

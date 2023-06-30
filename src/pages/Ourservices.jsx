@@ -6,11 +6,10 @@ import PopupMenu from "./PopupMenu";
 function Ourservices() {
   return (
     <div className="security">
-      <div className="service">
+       <div className="service">
         <h1>HOME SECURITY</h1>
         <div className="our">
-        <img src="https://media.istockphoto.com/id/1409181133/photo/large-home-exterior-nevada.webp?b=1&s=170667a&w=0&k=20&c=8jOyZYnQ8pP0YN6X1Oc_6nxlvZV20NFlGJ6bd_3jt3M=" />
-        <PopupMenu />
+                <PopupMenu />
         </div>
       </div>
       <div className="first">
@@ -41,9 +40,9 @@ function Ourservices() {
         <div className="aid">
           <img src="https://www.securexafrica.com/wp-content/uploads/2021/08/SECURITY-OFFICER-2-768x513.jpeg" />
         </div>
-      </div>
+      </div> 
 
-      <div className="first-reverse">
+       <div className="first-reverse">
         <div className="site">
           <h1>Emergency Response</h1>
           <h5>
@@ -68,7 +67,7 @@ function Ourservices() {
           </h5>
         </div>
         <div className="aid">
-          <img src="https://www.securexafrica.com/wp-content/uploads/2021/08/photo-1554734867-bf3c00a49371-768x512.jpg" />
+          <img src="https://media.istockphoto.com/id/1006092696/photo/modern-ambulance-car-parked-near-the-emergency-entrance-to-the-hospital-in-the-daytime.webp?b=1&s=170667a&w=0&k=20&c=SSCsRz4lBK7Jrk3Tg9RR8_9U_bs_LMXgP6V19GXSypY=" />
         </div>
       </div>
       <div className="first">
@@ -97,7 +96,7 @@ function Ourservices() {
         <div className="aid">
           <img src="https://www.securexafrica.com/wp-content/uploads/2016/11/Emergency-Response-Services-768x576.png" />
         </div>
-      </div>
+      </div> 
 
       <HomeSecurity />
     </div>

@@ -10,6 +10,7 @@ import Contacts from './pages/Contacts';
 import OurServices from './pages/OurServices'; // Fixed import statement
 import Register from './pages/Register';
 import Logout from './pages/Logout';
+import SignIn from './pages/SignIn'
 
 function App() {
   const [count, setCount] = useState(0);
@@ -25,6 +26,7 @@ function App() {
         <Route path="/aboutUs" element={<AboutUs />} />
         <Route path="/contacts" element={<Contacts />} />
         <Route path="/logout" element={<Logout />} /> 
+        <Route path='/signin' element={<SignIn />} />
       </Routes>
       <Footer />
     </BrowserRouter>

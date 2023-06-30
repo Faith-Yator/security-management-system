@@ -1,6 +1,11 @@
-.our {
-    display: flex;
+ .our {
+     display: flex;
     justify-content: space-evenly;
+    background-image: url('./home.jpg');
+   background-size: cover;
+   height: 75vh;
+   width:100%;
+   border-radius: 12px;
   }
   
   .our img {
@@ -26,6 +31,7 @@
     color: brown;
     text-decoration: underline;
   }
+
   
   .first {
     display: flex;
@@ -38,7 +44,7 @@
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
     margin-top: 4.5rem;
   }
   
@@ -66,12 +72,11 @@
     height: auto;
     object-fit: cover;
     border-radius: 6px;
-    box-shadow: -1px 1px 62px 18px rgba(0, 0, 0, 0.12);
     position: relative;
   }
   
   /* Media query for screens with a maximum width of 768px */
-  @media screen and (max-width: 768px) {
+   @media screen and (max-width: 750px) {
     .first,
     .first-reverse {
       flex-direction: column;
@@ -81,4 +86,4 @@
       width: 100%;
     }
   }
-  
+     

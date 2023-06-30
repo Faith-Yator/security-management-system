@@ -3,17 +3,22 @@
 .contacts{
     justify-content: center;
     align-items: center;
+    /* background-image: url('./home.jpg'); */
+   background-size: cover;
+   /* height: 100vh; */
+   width: 100%;
+   border-radius: 12px;
 
 }
 .contacts h1{
-    color: brown;
+    /* color: white; */
     justify-content: center;
     align-items: center;
     display: flex;
 
 }
 .contacts h3{
-    color: brown;
+    /* color: white; */
     justify-content: center;
     align-items: center;
     display: flex;

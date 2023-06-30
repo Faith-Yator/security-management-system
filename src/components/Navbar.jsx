@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import './Navbar.css';
 import { Link } from 'react-router-dom';
-import { FaBook, FaCogs } from 'react-icons/fa';
+import { FaBook, FaCogs, FaToolbox } from 'react-icons/fa';
 import { BsFillPersonFill } from 'react-icons/bs';
 import { AiFillHome } from 'react-icons/ai';
 import { RiContactsFill } from 'react-icons/ri';
-import { FiX,FiLogOut } from 'react-icons/fi';
+import { FiX, FiLogOut } from 'react-icons/fi';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,12 +32,7 @@ const Navbar = () => {
               <FiX />
             </div>
           )}
-          <li className="nav-item">
-            <Link to="/" className="nav-link">
-              <AiFillHome />
-              Home
-            </Link>
-          </li>
+
           <li className="nav-item">
             <Link to="/register" className="nav-link">
               <FaBook />
@@ -45,8 +40,14 @@ const Navbar = () => {
             </Link>
           </li>
           <li className="nav-item">
+            <Link to="/" className="nav-link">
+              <AiFillHome />
+              Home
+            </Link>
+          </li>
+          <li className="nav-item">
             <Link to="/ourServices" className="nav-link">
-              <FaCogs />
+              <FaToolbox />
               Our Services
             </Link>
           </li>
@@ -66,6 +67,11 @@ const Navbar = () => {
             <Link to="/contacts" className="nav-link">
               <RiContactsFill />
               Contacts
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/signin" className="nav-link">
+             <button>SignIn</button> 
             </Link>
           </li>
           <li className="nav-item">

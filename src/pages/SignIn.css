@@ -72,20 +72,21 @@
   
   @media (max-width: 600px) {
     .formsignin {
-      width: 50%;
-      padding: 10px;
+      width: 70%;
+      padding: 15px;
     }
     
     input[type="text"],
     input[type="password"],
     input[type="email"] {
-      padding: 5px;
-      margin-bottom: 5px;
+      padding: 15px;
+      margin-bottom: 10px;
     }
   
     button[type="submit"] {
       
-      width: 50%;
+      width: 100%;
+      padding: 15px;
     }
   }
   

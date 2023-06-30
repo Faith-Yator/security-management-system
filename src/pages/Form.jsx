@@ -1,71 +1,72 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Form.css';
 import axios from 'axios';
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from 'yup';
+import { useNavigate } from 'react-router-dom';
+
+const schema = yup.object().shape({
+  Newslaterid: yup.string().required('Newslaterid is required'),
+  Name: yup.string().required('Name is required'),
+  Email: yup.string().email('Invalid email').required('Email is required'),
+});
 
 const Form = () => {
-  const [Newslaterid, setNewslaterid] = useState('');
-  const [Name, setName] = useState('');
-  const [Email, setEmail] = useState('');
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm({
+    resolver: yupResolver(schema),
+  });
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const Navigate = useNavigate();
 
+  const onSubmit = (data) => {
+    console.log(data);
 
-    const data = {
-      Newslaterid: Newslaterid,
-      Name: Name,
-      Email: Email
-    };
-
-    console.log('Newslaterid:', Newslaterid);
-    console.log('Name:', Name);
-    console.log('Email:', Email);
-
-    axios.post('http://localhost:3000/Newslaters/new', data)
+    axios
+      .post('http://localhost:3000/Newslaters/new', data)
       .then((response) => {
-        // Handle successful response
         console.log(response.data);
+        alert('Sent Successfully');
       })
       .catch((error) => {
-        // Handle error
         console.error(error);
+        alert('Please register your account');
+        Navigate('/register');
       });
-
-    // Clear form inputs
-    setNewslaterid('');
-    setName('');
-    setEmail('');
+    reset();
   };
+
+  // Check if the user is not registered and display an alert
+  // const isUserNotRegistered = true; // Replace with your logic to determine if the user is not registered
+
+  // if (isUserNotRegistered) {
+  //   return (
+  //     <div className="form-container">
+  //       <h3>Please register your account</h3>
+  //       <button onClick={() => Navigate('/register')}>Register</button>
+  //     </div>
+  //   );
+  // }
 
   return (
     <div className="form-container">
-      <form onSubmit={handleSubmit} className="form">
+      <form onSubmit={handleSubmit(onSubmit)} className="form">
         <label htmlFor="Newslaterid">Newslaterid:</label>
-        <input
-          type="text"
-          id="Newslaterid"
-          value={Newslaterid}
-          onChange={(e) => setNewslaterid(e.target.value)}
-          required
-        />
+        <input type="text" id="Newslaterid" {...register('Newslaterid')} />
+        {errors.Newslaterid && <span>{errors.Newslaterid.message}</span>}
 
         <label htmlFor="Name">Name:</label>
-        <input
-          type="text"
-          id="Name"
-          value={Name}
-          onChange={(e) => setName(e.target.value)}
-          required
-        />
+        <input type="text" id="Name" {...register('Name')} />
+        {errors.Name && <span>{errors.Name.message}</span>}
 
         <label htmlFor="Email">Email:</label>
-        <input
-          type="Email"
-          id="Email"
-          value={Email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
+        <input type="email" id="Email" {...register('Email')} />
+        {errors.Email && <span>{errors.Email.message}</span>}
 
         <button type="submit">Submit</button>
       </form>

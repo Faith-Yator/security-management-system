@@ -8,44 +8,43 @@ import { useNavigate } from 'react-router-dom';
 
 const SignIn = () => {
   const schema = yup.object().shape({
-    userName: yup.string().required('UserName is required!!'),
-    password: yup.string().required('Password is required!!'),
-    roles: yup.string().required('Roles is required!!'),
+    UserName: yup.string().required('UserName is required!!'),
+    Password: yup.string().required('Password is required!!'),
+    Roles: yup.string().required('Roles is required!!'),
   });
 
   const { register, handleSubmit, formState: { errors }, reset } = useForm({
     resolver: yupResolver(schema),
   });
- const Navigate=useNavigate();
-  const onSubmit = (data) => {
-    // Handle form submission here
-    console.log(data);
+  const Navigate = useNavigate();
 
-    // Example: Making a POST request using Axios
-    Axios.post('http://localhost:3000/auth/SignIn', data)
+  const onSubmit = (data) => {
+    Axios.post('http://localhost:3000/auth/Login', data)
       .then((response) => {
-        // Handle successful response
         console.log(response.data);
-        reset(); // Reset the form fields after successful submission
-        Navigate('/Register')
+        reset();
+        alert('Logged in Successfully');
+        Navigate("/ourServices");
       })
+      
       .catch((error) => {
-        // Handle error
+        alert("Invalid details or user not registered");
+        Navigate('/register');
         console.error(error);
-        
       });
+    console.log(data);
   };
 
   return (
     <div className='formsignin'>
-      <h1>SignIn</h1>
+      <h1>Login</h1>
       <form className="signin-form" onSubmit={handleSubmit(onSubmit)}>
-        <input type="text" name="userName" placeholder="UserName" {...register('userName')} />
-        <span className="error">{errors.userName?.message}</span>
-        <input type="password" name="password" placeholder="Password" {...register('password')} />
-        <span className="error">{errors.password?.message}</span>
-        <input type="text" name="roles" placeholder="Roles" {...register('roles')} />
-        <span className="error">{errors.roles?.message}</span>
+        <input type="text" name="userName" placeholder="UserName" {...register('UserName')} />
+        <span className="error">{errors.UserName?.message}</span>
+        <input type="password" name="password" placeholder="Password" {...register('Password')} />
+        <span className="error">{errors.Password?.message}</span>
+        <input type="text" name="roles" placeholder="Roles" {...register('Roles')} />
+        <span className="error">{errors.Roles?.message}</span>
         <button type="submit">Submit</button>
       </form>
     </div>

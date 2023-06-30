@@ -34,8 +34,8 @@ const ContactForm = () => {
       .then((response) => {
         // Handle successful response
         console.log(response.data);
-        reset(); // Reset the form fields after successful submission
         navigate('/Logout');
+        reset(); 
       })
       .catch((error) => {
         // Handle error
