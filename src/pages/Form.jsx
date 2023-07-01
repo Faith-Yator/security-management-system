@@ -5,6 +5,7 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { useNavigate } from 'react-router-dom';
+import { apiDomain } from './utils/utils.jsx';
 
 const schema = yup.object().shape({
   Newslaterid: yup.string().required('Newslaterid is required'),
@@ -28,7 +29,7 @@ const Form = () => {
     console.log(data);
 
     axios
-      .post('http://localhost:3000/Newslaters/new', data)
+      .post('${apiDomain}Newslaters/new', data)
       .then((response) => {
         console.log(response.data);
         alert('Sent Successfully');
