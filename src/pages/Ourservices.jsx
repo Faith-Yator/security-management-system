@@ -45,7 +45,7 @@ function Ourservices() {
        <div className="first-reverse">
         <div className="site">
           <h1>Emergency Response</h1>
-          <h5>
+          <div>
             <h4>Medical Response</h4>
             Kerio-Valley has partnered with other organizations
             <br />
@@ -64,7 +64,7 @@ function Ourservices() {
             <br /> ambulance care and transport to the hospital
             <br /> of your choice for onwards treatment where required
             <br />
-          </h5>
+          </div>
         </div>
         <div className="aid">
           <img src="https://media.istockphoto.com/id/1006092696/photo/modern-ambulance-car-parked-near-the-emergency-entrance-to-the-hospital-in-the-daytime.webp?b=1&s=170667a&w=0&k=20&c=SSCsRz4lBK7Jrk3Tg9RR8_9U_bs_LMXgP6V19GXSypY=" />
@@ -73,7 +73,7 @@ function Ourservices() {
       <div className="first">
         <div className="site">
           <h1>Alarm Response</h1>
-          <h5>
+          <div>
             <h4>
               Combine early detection of intrusion with prompt response to
               <br /> enhance the chances of apprehending criminals
@@ -91,7 +91,7 @@ function Ourservices() {
             <br /> dispatching multiple teams, and the use of riot shields,{" "}
             <br /> has enabled our teams to foil several high-profile armed
             robbery and kidnapping attempts in the recent past.
-          </h5>
+          </div>
         </div>
         <div className="aid">
           <img src="https://www.securexafrica.com/wp-content/uploads/2016/11/Emergency-Response-Services-768x576.png" />
